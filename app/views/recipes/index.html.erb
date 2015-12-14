@@ -1,0 +1,22 @@
+<h1>Searching for - <%= @search_term %></h1>
+
+<table border="1">
+  <tr>
+  	<th>Image</th>
+  	<th>Name</th>
+  	<th>Social Rank</th>
+  </tr>
+  <% @recipes.each do |recipe| %>
+    <tr class=<%= cycle('even', 'odd') %>>
+    	<td>
+    	<a href="<%=recipe["image_url"]%>">
+    		<img alt="Thumbnail" height="100" src="<%=recipe["image_url"]%>" width="100" />
+    	</a>
+    	</td>
+     
+      <td><%= link_to sanitize(recipe["title"]),"https://food2fork.com" %></td>
+      <td><%= recipe["socialRank"] %></td>
+    </tr>
+  <% end %>
+</table>
+
