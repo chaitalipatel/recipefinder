@@ -9,12 +9,12 @@
   <% @recipes.each do |recipe| %>
     <tr class=<%= cycle('even', 'odd') %>>
     	<td>
-    	<a href="<%=recipe["image_url"]%>">
+    	<a href="<%=recipe['f2f_url']%>">
     		<img alt="Thumbnail" height="100" src="<%=recipe["image_url"]%>" width="100" />
     	</a>
     	</td>
      
-      <td><%= link_to sanitize(recipe["title"]),"https://food2fork.com" %></td>
+      <td><%= link_to sanitize(recipe["title"]),recipe['f2f_url'] %></td>
       <td><%= recipe["socialRank"] %></td>
     </tr>
   <% end %>
